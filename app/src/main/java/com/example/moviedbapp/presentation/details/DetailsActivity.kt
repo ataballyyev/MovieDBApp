@@ -14,7 +14,6 @@ import com.bumptech.glide.Glide
 import com.example.moviedbapp.MovieDBApp
 import com.example.moviedbapp.data.model.MovieDetailsModel
 import com.example.moviedbapp.data.model.Result
-import com.example.moviedbapp.data.utils.Helpers
 import com.example.moviedbapp.databinding.ActivityDetailsBinding
 import javax.inject.Inject
 
@@ -24,6 +23,7 @@ class DetailsActivity : AppCompatActivity() {
     @Inject lateinit var viewModel: DetailsViewModel
     @Inject lateinit var adapter: ProductCompaniesAdapter
     private lateinit var movieDetails: MovieDetailsModel
+    private val API_KEY = "2ba736e735539c701b41ef80e1593e79"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,7 +61,7 @@ class DetailsActivity : AppCompatActivity() {
     }
 
     private fun initViewModel(id: Int) {
-        viewModel.getMovieDetails(id = id, apiKey = Helpers.API_KEY).observe(this) { movie ->
+        viewModel.getMovieDetails(id = id, apiKey = API_KEY).observe(this) { movie ->
             movieDetails = movie
             initializeUI()
         }
