@@ -1,5 +1,6 @@
 package com.example.moviedbapp.data.repository
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.example.moviedbapp.data.api.ApiService
 import com.example.moviedbapp.data.model.MovieDetailsModel
@@ -24,7 +25,7 @@ class MovieRepository @Inject constructor(private val service: ApiService) {
             }
 
             override fun onFailure(call: Call<MovieModel>, t: Throwable) {
-                TODO("Not yet implemented")
+                Log.i("ERROR", t.message.toString())
             }
         })
 
@@ -38,7 +39,7 @@ class MovieRepository @Inject constructor(private val service: ApiService) {
             }
 
             override fun onFailure(call: Call<MovieModel>, t: Throwable) {
-                TODO("Not yet implemented")
+                Log.i("ERROR", t.message.toString())
             }
         })
 
@@ -52,7 +53,7 @@ class MovieRepository @Inject constructor(private val service: ApiService) {
             }
 
             override fun onFailure(call: Call<MovieUpcomingModel>, t: Throwable) {
-                TODO("Not yet implemented")
+                Log.i("ERROR", t.message.toString())
             }
         })
 
