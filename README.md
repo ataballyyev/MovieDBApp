@@ -8,6 +8,8 @@
 * RxJava
 * Retrofit
 * Glide
+* Clean Architecture
+* Architecture Components
 
 ## Images
 
